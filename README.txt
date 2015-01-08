@@ -1,10 +1,14 @@
-"Implement a weighting function to determine "desirability" of attack targets. If desirability is over a certain threshold (variable threshold), then the attack is carried out.
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+// Warlight AI Bot            //
+// Author: Arlen Strausman    //
+// Added 01/08/15             //
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-This is determined by the degree to which it helps our bot take a super region, or whether it will result in an opponent losing control of a super region. Additionally the chances of taking the region should be taken into account...there may be ample motivation to take a region but if an attack will result in certain defeat, it should never be considered desirable. This desirability factor will be determined before either reinforcement or attacks, so that the two phases may work in conjunction on a holistic strategy rather than independently on different principles.
+This is an AI bot designed to play Warlight (an online adaptation of the game Risk).
+There are six classes. The bots main logic (strategy) is implemented within the "Bot.cpp" file.
 
-Similarly, implement a function to determine feasibility of each potential attacking region. This is based on the number of troops in each potential attacking region in relation to the number of troops in the target region, and the importance of holding said region (will the loss of this region result in the loss of a super region?).
+The main strategy involves a function which weights the desirability of each move against the 
+feasibility of that move being successful. This function is responsible for deciding where to allocate 
+troops and which attacks to make. 
 
-Whether the AI is aggressive or not will depend on the minimum threshold of desirability necessary for attacking regions, and the degree of feasibility for the attacking region. A low threshold will result in an AI that attacks anything that has any tangible gain despite low feasibility, whereas a high threshold will result in a cautious AI that only attacks regions it can definitely take and that show a large degree of tangible gain with high feasibility.
-
-In addition to the scalability of the desirability threshold, the number of desirable targets that actually get attacked, number of regions that receive reinforcements, and percentage of a region's troops used in a given attack should also be scalable, giving the genetic algorithm more room to adapt itself."
-hm more room to adapt itself.
+To prevent idle troops, a BFS determines a move that will send excess to the "front lines" the quickest.
