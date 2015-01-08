@@ -5,7 +5,8 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 This is an AI bot designed to play Warlight (an online adaptation of the game Risk). It is currently 
-playing ranked games on theaigames.com. This was my senior project at Goucher College.
+playing ranked games on theaigames.com. The warlight engine is available here: https://github.com/theaigames/conquest-engine
+This was my senior project at Goucher College.
 
 My bot is built upon a starter bot template designed by MasterJos (Parser.cpp, Region.cpp, SuperRegion.cpp, Main.cpp)
 There are six classes. The bots main logic (strategy) is implemented within the "Bot.cpp" file, 
