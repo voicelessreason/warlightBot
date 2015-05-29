@@ -318,9 +318,9 @@ int Bot::moveToEnemy(int start)
 	}
 	return ret;
 }
-// Function to find best move for idle troops
+// Function to find best move for idle troops (if no enemy territory exists)
 // Pretty much a slightly altered BFS over the mapGraph structure
-// Returns -1 if there is no enemy to move towards
+// Returns -1 if there is no neutral to move towards (usually not gonna happen)
 int Bot::moveToNeutral(int start)
 {
 	resetMapGraphVisits();
